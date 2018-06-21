@@ -1,6 +1,6 @@
 {
   "name": "react-two-cents",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "My input on input fields in React",
   "main": "dist/react-two-cents.js",
   "umd:main": "dist/react-two-cents.umd.js",
