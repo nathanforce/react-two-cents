@@ -9,6 +9,7 @@
   "author": "Nathan Force <nathan.a.force@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "test": "echo \"No tests yet you lazy bum\"",
     "babel": "babel --presets=react --plugins=transform-object-rest-spread --no-babelrc -d build src",
     "build": "npm run -s babel && microbundle",
     "dev": "microbundle watch"
