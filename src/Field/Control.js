@@ -8,28 +8,33 @@ class RegisteredControl extends React.Component {
   }
 
   render() {
-    const { id, onBlur, onFocus, ...props } = this.props;
+    const { children, id, onBlur, onFocus, ...props } = this.props;
     return (
       <FieldContext.Consumer>
-        {({ focus, blur, error, controlId, helpId, register }) => (
-          <input
-            id={controlId}
-            onFocus={() => {
+        {({ focus, blur, error, controlId, register }) => {
+          const inputProps = {
+            id: controlId,
+            onFocus: () => {
               focus();
               if (onFocus) {
                 onFocus();
               }
-            }}
-            onBlur={() => {
+            },
+            onBlur: () => {
               blur();
               if (onBlur) {
                 onBlur();
               }
-            }}
-            aria-invalid={!!error}
-            {...props}
-          />
-        )}
+            },
+            'aria-invalid': !!error,
+          };
+
+          return children ? (
+            children(inputProps)
+          ) : (
+            <input {...inputProps} {...props} />
+          );
+        }}
       </FieldContext.Consumer>
     );
   }
