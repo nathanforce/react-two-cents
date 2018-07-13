@@ -67,3 +67,5 @@ export class Field extends React.Component {
     );
   }
 }
+
+Field.displayName = 'Field';

@@ -8,3 +8,5 @@ export const Label = props => {
     </FieldContext.Consumer>
   );
 };
+
+Label.displayName = 'label';
