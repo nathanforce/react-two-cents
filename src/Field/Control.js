@@ -8,7 +8,8 @@ class RegisteredControl extends React.Component {
   }
 
   render() {
-    const { children, id, onBlur, onFocus, ...props } = this.props;
+    const { children, id, onBlur, onFocus, register, ...props } = this.props;
+
     return (
       <FieldContext.Consumer>
         {({ focus, blur, error, controlId, register }) => {
@@ -40,4 +41,7 @@ class RegisteredControl extends React.Component {
   }
 }
 
+RegisteredControl.displayName = 'RegisteredControl';
+
 export const Control = registerFieldComponent(RegisteredControl);
+Control.displayName = 'Control';

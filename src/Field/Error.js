@@ -17,4 +17,7 @@ class RegisteredError extends React.Component {
   }
 }
 
+RegisteredError.displayName = 'RegisteredError';
+
 export const Error = registerFieldComponent(RegisteredError);
+Error.displayName = 'Error';
