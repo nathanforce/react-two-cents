@@ -15,16 +15,16 @@ class RegisteredControl extends React.Component {
         {({ focus, blur, error, controlId, register }) => {
           const inputProps = {
             id: controlId,
-            onFocus: () => {
+            onFocus: (e) => {
               focus();
               if (onFocus) {
-                onFocus();
+                onFocus(e);
               }
             },
-            onBlur: () => {
+            onBlur: (e) => {
               blur();
               if (onBlur) {
-                onBlur();
+                onBlur(e);
               }
             },
             'aria-invalid': !!error,
